@@ -175,10 +175,10 @@ public class LinkedList<T> implements Iterator<Node<T>>, Iterable<Node<T>> {
 
         if (current == null) {
             return first != null;
-        } else {
-            return current.getNext() != null;
         }
-
+        // else { else Not necessary
+        return current.getNext() != null;
+        //}
     }
 
     /**
@@ -210,6 +210,7 @@ public class LinkedList<T> implements Iterator<Node<T>>, Iterable<Node<T>> {
 
     /**
      * Get first element
+     *
      * @return Returns the first element
      */
     public Node<T> getFirst() {
@@ -219,6 +220,7 @@ public class LinkedList<T> implements Iterator<Node<T>>, Iterable<Node<T>> {
 
     /**
      * Verify Limits to throw exception
+     *
      * @throws SizeLimitExceededException
      */
     private void verifyLimit() throws SizeLimitExceededException {
