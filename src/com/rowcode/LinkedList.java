@@ -176,8 +176,14 @@ public class LinkedList<T> implements Iterator<Node<T>>, Iterable<Node<T>> {
         if (current == null) {
             return first != null;
         }
-        // else { else Not necessary
-        return current.getNext() != null;
+
+        boolean _hasNext = current.getNext() != null;
+
+        //Move to the beginners
+        if (!_hasNext) {
+            current = null;
+        }
+        return _hasNext;
         //}
     }
 
@@ -189,6 +195,7 @@ public class LinkedList<T> implements Iterator<Node<T>>, Iterable<Node<T>> {
     @Override
     public Node<T> next() {
 
+        //first time
         if (current == null) {
             current = first;
         } else {
